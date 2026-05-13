@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Flow Settings</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="popup-container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>Video Flow</h1>
+            </div>
+            <p class="subtitle">Customize your playback</p>
+        </header>
+
+        <main>
+            <div class="setting-group">
+                <label for="barColor">Progress Color</label>
+                <div class="color-picker-container">
+                    <input type="color" id="barColor" value="#00F2FF">
+                    <span id="colorHex">#00F2FF</span>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label for="barHeight">Bar Height (<span id="heightValue">4</span>px)</label>
+                <input type="range" id="barHeight" min="2" max="12" value="4" step="1">
+            </div>
+
+            <div class="presets">
+                <label>Presets</label>
+                <div class="preset-buttons">
+                    <button class="preset-btn cyan" data-color="#00F2FF" data-height="4"></button>
+                    <button class="preset-btn purple" data-color="#7000FF" data-height="6"></button>
+                    <button class="preset-btn orange" data-color="#FF4D00" data-height="2"></button>
+                    <button class="preset-btn green" data-color="#00FF85" data-height="8"></button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <button id="saveBtn">Save Settings</button>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

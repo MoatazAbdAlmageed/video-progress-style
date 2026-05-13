@@ -1,0 +1,103 @@
+/* Video Flow Content Styles */
+
+:root {
+    --vf-primary-color: #00F2FF;
+    --vf-secondary-color: #7000FF;
+    --vf-bar-height: 4px;
+    --vf-indicator-opacity: 1;
+}
+
+/* Container for our injected elements */
+#vf-container {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2147483647; /* Ensure it stays on top */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: transparent !important;
+}
+
+/* Custom Progress Bar */
+.vf-progress-bar-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--vf-bar-height);
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+.vf-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--vf-secondary-color), var(--vf-primary-color));
+    width: 0%;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px var(--vf-primary-color);
+}
+
+/* Circular Indicator */
+.vf-circular-indicator {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: var(--vf-indicator-opacity);
+    transition: opacity 0.5s ease, transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: auto; /* Allow hover to trigger transition */
+}
+
+.vf-circular-indicator:hover {
+    transform: scale(1.1);
+    opacity: 1 !important;
+}
+
+.vf-circular-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+.vf-ring-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 4;
+}
+
+.vf-ring-progress {
+    fill: none;
+    stroke: var(--vf-primary-color);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 175.93; /* 2 * PI * 28 */
+    stroke-dashoffset: 175.93;
+    transition: stroke-dashoffset 0.1s linear;
+}
+
+.vf-percentage-text {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Animation for appearance */
+@keyframes vf-fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.vf-animate-in {
+    animation: vf-fade-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

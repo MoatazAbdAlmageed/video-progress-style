@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Video Flow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8a2be2;
+            --secondary: #00d2ff;
+            --text-main: #1a1a2e;
+            --text-muted: #666;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --accent: #eee1ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 60px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.3);
+        }
+
+        .icon-box svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+            color: #444;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .highlight-box {
+            background: var(--accent);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: May 13, 2026</p>
+        </header>
+
+        <section>
+            <p><strong>Video Flow</strong> ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains our practices regarding the collection, use, and disclosure of information when you use our Chrome Extension.</p>
+        </section>
+
+        <section>
+            <h2>1. Information Collection and Use</h2>
+            <p>We believe in absolute privacy. Video Flow does <strong>NOT</strong> collect, store, or transmit any personal information or data from its users.</p>
+            <ul>
+                <li><strong>Browsing History:</strong> We do not track, record, or store your browsing history or visited URLs.</li>
+                <li><strong>Personal Data:</strong> We do not collect names, email addresses, or any other personally identifiable information.</li>
+                <li><strong>Video Content:</strong> We do not track what videos you watch or any metadata associated with your media consumption.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Local Storage</h2>
+            <div class="highlight-box">
+                <p>All your settings are yours alone.</p>
+            </div>
+            <p>Video Flow uses the <code>chrome.storage.sync</code> API to store your UI preferences (such as the chosen progress bar color and height). This data stays within your Google Chrome profile and is only used to apply your custom styles across different devices where you are logged into Chrome.</p>
+        </section>
+
+        <section>
+            <h2>3. Permissions</h2>
+            <p>Our extension requests the minimum amount of permissions necessary to function:</p>
+            <ul>
+                <li><strong>Storage:</strong> Used solely to save your customization settings.</li>
+                <li><strong>Host Permissions:</strong> Used to inject the visual progress indicators onto video-playing websites.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy or the extension's behavior, please reach out to us through the official support channel on the Chrome Web Store.</p>
+        </section>
+
+        <div class="footer">
+            &copy; 2026 Video Flow. Built with privacy in mind.
+        </div>
+    </div>
+
+</body>
+</html>
